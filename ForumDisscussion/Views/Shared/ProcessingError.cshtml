@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "ProcessingError";
+}
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<h2 style="color: red;">We cann't process your request now .It's just a technical problem.Please go to the previous page and  try again .</h2>
+<br /><h3 style="font-size: 20px;color: green">
+The problem can be caused for the following reasons:<br/>
+1. You click the <b>Action </b> button <b>randomly (again and agin)</b><br/>
+
+
+2.You click the <b>Action </b> button before the page loaded fully.<br/>
+
+          So,make sure that the above mentioned reasons won't be happen any more<br/>
+
+          <a href="#" id="ProcessingErrorBackButtonId" >
+              Go Back To Previous Page
+
+          </a>    
+
+      </h3>
+<script>
+  
+
+    function GoBackToPreviousPage() {
+
+        history.back();
+    }
+
+    $("#ProcessingErrorBackButtonId").click(function() {
+
+        GoBackToPreviousPage();
+    });
+    $("#ProcessingErrorBackButtonId").css({ 'text-decoration': 'underline', 'background': 'none' });
+    $("#ProcessingErrorBackButtonId").hover(function() {
+        $("#ProcessingErrorBackButtonId").css({ 'color': 'green', 'font-weight': 'bold' });
+    },function() {
+        $("#ProcessingErrorBackButtonId").css({ 'color': 'black', 'font-weight': 'normal' });
+    });
+
+</script>
